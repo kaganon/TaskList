@@ -1,9 +1,18 @@
-<h1>Tasks</h1>
+<h1>Katrina's Tasks</h1>
 
 <ul>
   <% @tasks.each do |task| %>
-  <li>
-     <%= task[:school]%>
-  </li>
+  <div class="list-container">
+    <li>
+      <%= task.action %>
+    </li>
+    <li>
+      <%= task.description %>
+    </li>
+    <li>
+      <%= task.completion_date %>
+    </li>
+  </div>
+
   <% end %>
 </ul>
