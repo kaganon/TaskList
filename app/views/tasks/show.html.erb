@@ -1,8 +1,16 @@
-<h1>First Task</h1>
+<h1>Task Details</h1>
 
 <p>
-  <% @task.each do |key, value| %>
-    <h2><%= key.upcase %></h2>
-    <%= value %>
-  <% end %>
+  <%= @task[:description] %>
 </p>
+
+<p>
+    <%= link_to "Go back to all tasks", tasks_path %>
+</p>
+
+
+<footer>
+  <p class="footer-text">
+    copyright 2018
+  </p>
+</footer>

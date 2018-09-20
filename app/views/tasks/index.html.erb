@@ -1,4 +1,10 @@
-<h1>Katrina's Tasks</h1>
+<div class="page-container">
+
+<h1>Task List</h1>
+
+<section>
+  Add Task
+</section>
 
 <ul>
   <% @tasks.each do |task| %>
@@ -7,12 +13,21 @@
       <%= task.action %>
     </li>
     <li>
-      <%= task.description %>
-    </li>
-    <li>
       <%= task.completion_date %>
     </li>
+    <li>
+      <%= link_to "Details", task_path(task.id) %>
+    </li>
+    <br />
   </div>
-
   <% end %>
 </ul>
+
+</div>
+
+
+<footer>
+  <p class="footer-text">
+    copyright 2018
+  </p>
+</footer>
