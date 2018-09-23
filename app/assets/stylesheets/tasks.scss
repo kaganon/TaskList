@@ -42,6 +42,11 @@ ul {
   flex-wrap: wrap;
 }
 
+.action-button {
+  display: flex;
+  flex-direction: row;
+}
+
 footer {
   grid-column: 2 / 3;
   grid-row: 1fr / 100% ;

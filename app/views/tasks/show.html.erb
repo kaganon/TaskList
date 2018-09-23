@@ -5,11 +5,19 @@
 </p>
 
 <p>
+  <%= @task[:completion_date] %>
+</p>
+
+<p>
     <%= link_to "Go back to all tasks", tasks_path %>
 </p>
 
 <p>
   <%= link_to "Edit Task", edit_task_path %>
+</p>
+
+<p>
+  <%= link_to "Delete Task", task_path, method: :delete, data: { confirm: "Are you sure you?" } %>
 </p>
 
 
