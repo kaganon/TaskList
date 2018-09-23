@@ -1,20 +1,3 @@
-<h1>Editing Task #<%=@task.id%></h1>
+<h1>Editing Task</h1>
 
-<%= form_with model: @task do |f| %>
-
-  <%= f.label :action %><br />
-  <%= f.text_field :action %><br />
-
-  <%= f.label :description %><br />
-  <%= f.text_area :description, cols: 50, rows: 5 %> <br/>
-
-  <%= f.label :completion_date %>
-  <%= f.date_field :completion_date %>
-
-  <%= f.submit "Update Task", class: "task-button" %>
-
-<% end %>
-
-
-
-<!-- refactor this to partial form  -->
+<%= render partial: "form", locals: { action_name: "Update task" }%>

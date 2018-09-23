@@ -1,14 +1,12 @@
 class TasksController < ApplicationController
 
-
   def index
     @tasks = Task.all
   end
 
 
   def show
-    task_id = params[:id]
-    @task = Task.find_by(id: task_id)
+    @task = Task.find_by(id: params[:id])
     if @task.nil?
       head :not_found
     end
@@ -32,8 +30,7 @@ class TasksController < ApplicationController
 
 
   def edit
-    task_id = params[:id]
-    @task = Task.find_by(id: task_id)
+    @task = Task.find_by(id: params[:id])
     if @task.nil?
       head :not_found
     end
@@ -41,22 +38,15 @@ class TasksController < ApplicationController
 
 
   def update
-    task_id = params[:id]
-    @task = Task.find_by(id: task_id)
+    @task = Task.find_by(id: params[:id])
 
     if @task.nil?
       head :not_found
     end
 
-    # use params (task.update(book_params))
     # check if the render path is the correct one?
 
-    is_updated = @task.update(
-      action: params[:task][:action],
-      description: params[:task][:description],
-      completion_date: params[:task][:completion_date],
-      completed: params[:task][:completed]
-    )
+    is_updated = @task.update(task_params)
 
     if is_updated
       redirect_to task_path(@task)
@@ -65,9 +55,9 @@ class TasksController < ApplicationController
     end
   end
 
+
   def destroy
-    task_id = params[:id]
-    task = Task.find_by(id: task_id)
+    task = Task.find_by(id: params[:id])
 
     if task.nil?
       head :not_found
@@ -80,9 +70,9 @@ class TasksController < ApplicationController
     end
   end
 
+
   def complete
-    task_id = params[:id].to_i
-    @task = Task.find_by(id: task_id)
+    @task = Task.find_by(id: params[:id])
 
     if @task.nil?
       head :not_found
@@ -94,9 +84,9 @@ class TasksController < ApplicationController
     redirect_to root_path
   end
 
+
   def incomplete
-    task_id = params[:id].to_i
-    @task = Task.find_by(id: task_id)
+    @task = Task.find_by(id: params[:id])
 
     if @task.nil?
       head :not_found
@@ -108,13 +98,12 @@ class TasksController < ApplicationController
     redirect_to root_path
   end
 
+
   private
 
   def task_params
     return params.require(:task).permit(:action, :description, :completion_date, :completed, false)
   end
-
-
 
 
 end
