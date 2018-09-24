@@ -45,21 +45,21 @@
 
           <li>
             <% unless task.completed %>
-            <%= link_to "Mark-Complete", complete_task_path(task.id), method: :patch   %>
+              <%= link_to "Mark-Complete", complete_task_path(task.id), method: :patch   %>
             <% else %>
-            <%= link_to "Unmark-Complete", incomplete_task_path(task.id), method: :patch  %>
+              <%= link_to "Unmark-Complete", incomplete_task_path(task.id), method: :patch  %>
             <% end %>
           </li>
         </div>
 
-        <% end %>
+      <% end %>
 
     </ul>
   </main>
 
 
   <footer>
-    <p class="footer-text">
+    <p>
       Made with <ion-icon name="heart"></ion-icon> at Ada Developers Academy 2018
     </p>
     <a href="https://unsplash.com/@designedbyjess?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"><ion-icon name="camera"></ion-icon> Jess Waters on Unsplash</a>

@@ -6,7 +6,7 @@ html body {
   display: flex;
   flex-direction: column;
   font-family: 'Poppins', sans-serif;
-  background-image:  linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), image-url('background-image-1.jpg');
+  background-image:  linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), image-url('background-image.jpg');
   background-size: cover;
   margin: 0;
   padding-top: 5%;
@@ -94,17 +94,12 @@ main {
   color: gray;
 }
 
-
-.form-action, .form-description, .form-completion-date{
+.form-action, .form-description, .form-completion-date {
   display: flex;
   flex-direction: column;
   text-align: center;
   padding-bottom: 10%;
 }
-
-
-
-
 
 footer {
   background-color: rgba(255,236,210,.4);
@@ -115,7 +110,6 @@ footer {
   width: 100%;
   bottom: 0;
 }
-
 
 footer a {
   color: gray;
