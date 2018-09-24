@@ -1,47 +1,68 @@
 <div class="page-container">
 
-<h1>Task List</h1>
+  <header>
+    <h1>Task List</h1>
+    <nav>
+      <ul class="nav-button">
+        <li >
+          <%= link_to "Add Task", new_task_path %>
+        </li>
+        <li >
+          <%= link_to "All Tasks", tasks_path %>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-<section>
-  <%= link_to "Add Task", new_task_path %>
-</section>
 
-<ul>
-  <% @tasks.each do |task| %>
-  <div class="list-container">
-    <li>
-      <%= task.action %>
-    </li>
-    <li>
-      <%= task.completion_date %>
-    </li>
-    <li class="action-button">
-      <%= link_to "Details", task_path(task.id) %>
-    </li>
-    <li class="action-button">
-      <%= link_to "Edit", edit_task_path(task.id) %>
-    </li>
-    <li class="action-button">
-      <%= link_to "Delete", task_path(task.id), method: :delete, data: { confirm: "Are you sure you?" } %>
-    </li>
-    <li class="action-button">
-      <% unless task.completed %>
-        <%= link_to "Mark-Complete", complete_task_path(task.id), method: :patch   %>
-      <% else %> 
-        <%= link_to "Unmark-Complete", incomplete_task_path(task.id), method: :patch  %>
-      <% end %>
-    </li>
+  <main>
+    <ul class="list-container">
 
-    <br />
-  </div>
-  <% end %>
-</ul>
+      <% @tasks.each do |task| %>
+
+        <div class="text-description">
+          <li>
+            <%= task.action %>
+          </li>
+
+          <li class="text-description">
+            <%="Completion date: #{task.completion_date }" %>
+          </li>
+        </div>
+
+        <div class="action-button">
+          <li>
+            <%= link_to "Details", task_path(task.id) %>
+          </li>
+
+          <li>
+            <%= link_to "Edit", edit_task_path(task.id) %>
+          </li>
+
+          <li>
+            <%= link_to "Delete", task_path(task.id), method: :delete, data: { confirm: "Are you sure?" } %>
+          </li>
+
+          <li>
+            <% unless task.completed %>
+            <%= link_to "Mark-Complete", complete_task_path(task.id), method: :patch   %>
+            <% else %>
+            <%= link_to "Unmark-Complete", incomplete_task_path(task.id), method: :patch  %>
+            <% end %>
+          </li>
+        </div>
+
+        <% end %>
+
+    </ul>
+  </main>
+
+
+  <footer>
+    <p class="footer-text">
+      Made with <ion-icon name="heart"></ion-icon> at Ada Developers Academy 2018
+    </p>
+    <a href="https://unsplash.com/@designedbyjess?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"><ion-icon name="camera"></ion-icon> Jess Waters on Unsplash</a>
+  </footer>
 
 </div>
-
-
-<footer>
-  <p class="footer-text">
-    copyright 2018
-  </p>
-</footer>

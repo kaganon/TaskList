@@ -1,14 +1,24 @@
-<%= form_with model: @task do |f| %>
+<main>
+  <%= form_with model: @task do |f| %>
 
-  <%= f.label :action %><br />
-  <%= f.text_field :action %><br />
+    <section class="form-action">
+      <%= f.label :action %>
+      <%= f.text_field :action %>
+    </section>
 
-  <%= f.label :description %><br />
-  <%= f.text_area :description, cols: 50, rows: 5 %> <br/>
+    <section class="form-description">
+      <%= f.label :description %>
+      <%= f.text_area :description, cols: 50, rows: 10 %>
+    </section>
 
-  <%= f.label :completion_date %>
-  <%= f.date_field :completion_date %>
+    <section class="form-completion-date">
+      <%= f.label :completion_date %>
+      <%= f.date_field :completion_date %>
+    </section>
+
 
   <%= f.submit action_name, class: "task-button" %>
 
-<% end %>
+  <% end %>
+
+</main>

@@ -1,28 +1,46 @@
-<h1>Task Details</h1>
-
-<p>
-  <%= @task[:description] %>
-</p>
-
-<p>
-  <%= @task[:completion_date] %>
-</p>
-
-<p>
-    <%= link_to "Go back to all tasks", tasks_path %>
-</p>
-
-<p>
-  <%= link_to "Edit Task", edit_task_path %>
-</p>
-
-<p>
-  <%= link_to "Delete Task", task_path, method: :delete, data: { confirm: "Are you sure you?" } %>
-</p>
+<div class="page-container">
 
 
-<footer>
-  <p class="footer-text">
-    copyright 2018
-  </p>
-</footer>
+  <header>
+    <h1>Task Details</h1>
+  </header>
+
+
+  <main>
+    <ul class="list-container">
+      <div class="text-description">
+        <li>
+          <%= @task[:description] %>
+        </li>
+
+        <li>
+          <%= "Completion date: #{@task[:completion_date]}" %>
+        </li>
+      </div>
+
+      <div class="action-button">
+      <li>
+        <%= link_to "All tasks", tasks_path %>
+      </li>
+
+      <li>
+        <%= link_to "Edit Task", edit_task_path %>
+      </li>
+
+      <li>
+          <%= link_to "Delete Task", task_path, method: :delete, data: { confirm: "Are you sure?" } %>
+      </li>
+    </div>
+
+    </ul>
+  </main>
+
+
+  <footer>
+    <p class="footer-text">
+      Made with <ion-icon name="heart"></ion-icon> at Ada Developers Academy 2018
+    </p>
+    <a href="https://unsplash.com/@designedbyjess?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"><ion-icon name="camera"></ion-icon> Jess Waters on Unsplash</a>
+  </footer>
+
+</div>

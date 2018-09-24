@@ -2,68 +2,121 @@
   box-sizing: border-box;
 }
 
-body {
+html body {
   display: flex;
   flex-direction: column;
-  font-family: 'Caudex', serif;;
-  background-color:rgb(255,255,255) ;
+  font-family: 'Poppins', sans-serif;
+  background-image:  linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), image-url('background-image-1.jpg');
+  background-size: cover;
   margin: 0;
-  padding: 0;
+  padding-top: 5%;
+  height: 100%;
 }
 
 .page-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 10% 90%;
-  margin-right: 20%;
+  grid-template-columns: 10% 10% auto 10% 10%;
+  grid-template-rows: 10% 25% auto 25% 10%;
+}
+
+header {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  color: black;
 }
 
 h1 {
-  display: flex;
-  justify-content: flex-start;
-  margin-left: 10%;
+  border: 2px solid black;
+  text-align: center;
+  border-radius: 20px;
+  margin-bottom: 30px;
 }
 
-ul {
-  grid-column: 2 / 3;
-  grid-row: 2 / 2;
-  border-style: solid;
-  border-radius: 10px;
-  border-color: black;
-  padding: 10% ;
-  margin: 0;
+.nav-button {
+  display: flex;
+  list-style-type: none;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav-button li a {
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 20px;
+  color: black;
+  text-decoration: none;
+}
+
+.nav-button a:hover {
+  color: gray;
+}
+
+main {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
 }
 
 .list-container {
+  list-style-type: none;
+  flex-wrap: wrap;
+  color: black;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 50px;
+  margin-top: 5%;
+}
+
+.text-description {
   display: flex;
   flex-direction: column;
-  list-style-type: none;
-  text-align: left;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 .action-button {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-color: gray;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
 }
+
+.action-button a {
+  text-decoration: none;
+  color: black;
+}
+
+.action-button a:hover {
+  color: gray;
+}
+
+
+.form-action, .form-description, .form-completion-date{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 10%;
+}
+
+
+
+
 
 footer {
-  grid-column: 2 / 3;
-  grid-row: 1fr / 100% ;
-  margin-top: 25px;
-  background-color: lightgray;
-}
-
-p {
-  display: flex;
-  justify-content: center;
-  margin-left: 10%
+  background-color: rgba(255,236,210,.4);
+  font-size: 10px;
+  color: gray;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
 
-section {
-  grid-column: 1 / 2;
-  grid-row: 2 / 2;
-  margin-left: 10%;
-
+footer a {
+  color: gray;
 }
