@@ -44,8 +44,6 @@ class TasksController < ApplicationController
       head :not_found
     end
 
-    # check if the render path is the correct one?
-
     is_updated = @task.update(task_params)
 
     if is_updated
@@ -102,7 +100,9 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    return params.require(:task).permit(:action, :description, :completion_date, :completed, false)
+    return params.require(:task).permit(
+      :action, :description, :completion_date, :completed, false
+    )
   end
 
 
